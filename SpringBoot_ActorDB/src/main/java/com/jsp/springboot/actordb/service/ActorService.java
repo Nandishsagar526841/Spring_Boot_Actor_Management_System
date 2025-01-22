@@ -4,22 +4,25 @@ package com.jsp.springboot.actordb.service;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
+
 import com.jsp.springboot.actordb.entity.Actor;
+import com.jsp.springboot.actordb.utility.ResponseStructure;
 
 public interface ActorService {
 	
-	public Actor addActor(Actor actor);
+	public ResponseEntity<ResponseStructure<Actor>> addActor(Actor actor);
 	
 	
-	public List<Actor> findAllActors();
+	public ResponseEntity<ResponseStructure<List<Actor>>> findAllActors();
 	
-	public Actor findActorById(int actorId);
+	public ResponseEntity<ResponseStructure<Actor>> findActorById(int actorId);
 	
-	public Actor updateById(int actorId,Actor updatedActor);
+	public ResponseEntity<ResponseStructure<Actor>> updateById(int actorId,Actor updatedActor);
 	
-	public Actor deleteById(int actorId);
+	public ResponseEntity<ResponseStructure<Actor>> deleteById(int actorId);
 	
-	public List<Actor> findByActorName(String actorName);
+	public ResponseEntity<ResponseStructure<List<Actor>>> findByActorName(String actorName);
 	
 	public List<Actor> findByAge(int age);
 	
