@@ -12,7 +12,7 @@ public class ErrorStructure<T>{
 	}
 	public void setErrorCode(int errorCode) {
 		this.errorCode = errorCode;
-	}
+	} 
 	public String getMessage() {
 		return message;
 	}

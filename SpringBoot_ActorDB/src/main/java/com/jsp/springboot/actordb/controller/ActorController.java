@@ -45,7 +45,7 @@ public class ActorController {
 	public ResponseEntity<ResponseStructure<List<Actor>>> findAllActors(){
 		return actorService.findAllActors();
 	}
-
+ 
 	//	@RequestMapping(value = "/actors/id", method=RequestMethod.GET)
 	@GetMapping("/actors/id")
 	public ResponseEntity<ResponseStructure<Actor>> findActorbyId(int actorId) {

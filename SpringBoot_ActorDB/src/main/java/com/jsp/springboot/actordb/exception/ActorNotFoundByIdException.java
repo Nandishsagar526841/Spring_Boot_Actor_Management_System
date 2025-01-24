@@ -8,7 +8,7 @@ public class ActorNotFoundByIdException extends RuntimeException{
 		super();
 		this.message = message;
 	}
-
+ 
 	public String getMessage() { 
 		return message;
 	}

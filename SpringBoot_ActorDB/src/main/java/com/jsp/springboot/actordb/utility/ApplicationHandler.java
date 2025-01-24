@@ -21,7 +21,7 @@ public class ApplicationHandler {
 		return new ResponseEntity<ErrorStructure<String>>(es,HttpStatus.NOT_FOUND);
 	}
 	
-	
+	 
 	@ExceptionHandler
 	public ResponseEntity<ErrorStructure<String>> actorNotFound(ActorNotFoundException e){
 		ErrorStructure<String> es=new ErrorStructure<String>();

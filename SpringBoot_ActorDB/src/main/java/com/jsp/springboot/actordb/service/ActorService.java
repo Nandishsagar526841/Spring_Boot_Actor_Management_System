@@ -17,7 +17,7 @@ public interface ActorService {
 	public ResponseEntity<ResponseStructure<List<Actor>>> findAllActors();
 	
 	public ResponseEntity<ResponseStructure<Actor>> findActorById(int actorId);
-	
+	 
 	public ResponseEntity<ResponseStructure<Actor>> updateById(int actorId,Actor updatedActor);
 	
 	public ResponseEntity<ResponseStructure<Actor>> deleteById(int actorId);
