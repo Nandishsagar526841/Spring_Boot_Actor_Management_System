@@ -11,5 +11,5 @@ public class ActorNotFoundException extends RuntimeException {
 
 	public String getMessage() {
 		return message;
-	}
+	} 
 }
