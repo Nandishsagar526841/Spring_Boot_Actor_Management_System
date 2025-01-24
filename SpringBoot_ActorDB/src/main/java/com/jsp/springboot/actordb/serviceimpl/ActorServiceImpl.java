@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.jsp.springboot.actordb.entity.Actor;
+import com.jsp.springboot.actordb.exception.ActorNotFoundByIdException;
+import com.jsp.springboot.actordb.exception.ActorNotFoundException;
 import com.jsp.springboot.actordb.repository.ActorRepository;
 import com.jsp.springboot.actordb.service.ActorService;
 import com.jsp.springboot.actordb.utility.ResponseStructure;
@@ -34,7 +36,7 @@ public class ActorServiceImpl implements ActorService{
 	public ResponseEntity<ResponseStructure<List<Actor>>> findAllActors() {
 		List<Actor> actors=actorRepository.findAll();
 		if(actors.isEmpty()) {
-			return null;
+			throw new ActorNotFoundException("Actor Not Found");
 		}
 		else {
 			ResponseStructure<List<Actor>> responseStructure=new ResponseStructure<List<Actor>>();
@@ -58,7 +60,7 @@ public class ActorServiceImpl implements ActorService{
 			return new ResponseEntity<ResponseStructure<Actor>>(responseStructure,HttpStatus.FOUND);
 		}
 		else {
-			return null;
+			throw new ActorNotFoundByIdException("Actor Object Not Found..!!");
 		}
 
 	}
